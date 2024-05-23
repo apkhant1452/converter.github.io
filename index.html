@@ -16,18 +16,26 @@
         <button onclick="showConverter('volume')"><i class="fas fa-cube"></i><span>Volume</span></button>
         <button onclick="showConverter('temperature')"><i class="fas fa-thermometer-half"></i><span>Temperature</span></button>
         <button onclick="showConverter('time')"><i class="fas fa-clock"></i><span>Time</span></button>
+        <button onclick="showConverter('data')"><i class="fas fa-database"></i><span>Data</span></button>
+        <button onclick="showConverter('speed')"><i class="fas fa-tachometer-alt"></i><span>Speed</span></button>
     </div>
     <div id="length" class="converter active">
         <input type="text" id="lengthInput" placeholder="Enter value">
         <select id="lengthFrom">
             <option value="inches">Inches</option>
+            <option value="feet">Feet</option>
+            <option value="yards">Yards</option>
+            <option value="miles">Miles</option>
             <option value="cm">Centimeters</option>
             <option value="meters">Meters</option>
             <option value="km">Kilometers</option>
         </select>
         <select id="lengthTo">
-            <option value="cm">Centimeters</option>
             <option value="inches">Inches</option>
+            <option value="feet">Feet</option>
+            <option value="yards">Yards</option>
+            <option value="miles">Miles</option>
+            <option value="cm">Centimeters</option>
             <option value="meters">Meters</option>
             <option value="km">Kilometers</option>
         </select>
@@ -36,30 +44,40 @@
     <div id="area" class="converter">
         <input type="text" id="areaInput" placeholder="Enter value">
         <select id="areaFrom">
+            <option value="sqft">Square Feet</option>
+            <option value="sqm">Square Meters</option>
+            <option value="sqkm">Square Kilometers</option>
+            <option value="sqmi">Square Miles</option>
             <option value="acres">Acres</option>
-            <option value="sqm">Square meters</option>
-            <option value="sqkm">Square kilometers</option>
-            <option value="sqft">Square feet</option>
+            <option value="hectares">Hectares</option>
         </select>
         <select id="areaTo">
-            <option value="sqm">Square meters</option>
+            <option value="sqft">Square Feet</option>
+            <option value="sqm">Square Meters</option>
+            <option value="sqkm">Square Kilometers</option>
+            <option value="sqmi">Square Miles</option>
             <option value="acres">Acres</option>
-            <option value="sqkm">Square kilometers</option>
-            <option value="sqft">Square feet</option>
+            <option value="hectares">Hectares</option>
         </select>
         <div id="areaResult" class="result-box"></div>
     </div>
     <div id="mass" class="converter">
         <input type="text" id="massInput" placeholder="Enter value">
         <select id="massFrom">
-            <option value="kg">Kilograms</option>
             <option value="grams">Grams</option>
+            <option value="kg">Kilograms</option>
+            <option value="mg">Milligrams</option>
+            <option value="ounces">Ounces</option>
             <option value="pounds">Pounds</option>
+            <option value="stones">Stones</option>
         </select>
         <select id="massTo">
-            <option value="kg">Kilograms</option>
             <option value="grams">Grams</option>
+            <option value="kg">Kilograms</option>
+            <option value="mg">Milligrams</option>
+            <option value="ounces">Ounces</option>
             <option value="pounds">Pounds</option>
+            <option value="stones">Stones</option>
         </select>
         <div id="massResult" class="result-box"></div>
     </div>
@@ -69,11 +87,19 @@
             <option value="liters">Liters</option>
             <option value="ml">Milliliters</option>
             <option value="gallons">Gallons</option>
+            <option value="quarts">Quarts</option>
+            <option value="pints">Pints</option>
+            <option value="cups">Cups</option>
+            <option value="ounces">Ounces</option>
         </select>
         <select id="volumeTo">
             <option value="liters">Liters</option>
             <option value="ml">Milliliters</option>
             <option value="gallons">Gallons</option>
+            <option value="quarts">Quarts</option>
+            <option value="pints">Pints</option>
+            <option value="cups">Cups</option>
+            <option value="ounces">Ounces</option>
         </select>
         <div id="volumeResult" class="result-box"></div>
     </div>
@@ -99,6 +125,8 @@
             <option value="hours">Hours</option>
             <option value="days">Days</option>
             <option value="weeks">Weeks</option>
+            <option value="months">Months</option>
+            <option value="years">Years</option>
         </select>
         <select id="timeTo">
             <option value="seconds">Seconds</option>
@@ -106,8 +134,46 @@
             <option value="hours">Hours</option>
             <option value="days">Days</option>
             <option value="weeks">Weeks</option>
+            <option value="months">Months</option>
+            <option value="years">Years</option>
         </select>
         <div id="timeResult" class="result-box"></div>
+    </div>
+    <div id="data" class="converter">
+        <input type="text" id="dataInput" placeholder="Enter value">
+        <select id="dataFrom">
+            <option value="bits">Bits</option>
+            <option value="bytes">Bytes</option>
+            <option value="kb">Kilobytes</option>
+            <option value="mb">Megabytes</option>
+            <option value="gb">Gigabytes</option>
+            <option value="tb">Terabytes</option>
+        </select>
+        <select id="dataTo">
+            <option value="bits">Bits</option>
+            <option value="bytes">Bytes</option>
+            <option value="kb">Kilobytes</option>
+            <option value="mb">Megabytes</option>
+            <option value="gb">Gigabytes</option>
+            <option value="tb">Terabytes</option>
+        </select>
+        <div id="dataResult" class="result-box"></div>
+    </div>
+    <div id="speed" class="converter">
+        <input type="text" id="speedInput" placeholder="Enter value">
+        <select id="speedFrom">
+            <option value="mps">Meters per second</option>
+            <option value="kph">Kilometers per hour</option>
+            <option value="mph">Miles per hour</option>
+            <option value="fps">Feet per second</option>
+        </select>
+        <select id="speedTo">
+            <option value="mps">Meters per second</option>
+            <option value="kph">Kilometers per hour</option>
+            <option value="mph">Miles per hour</option>
+            <option value="fps">Feet per second</option>
+        </select>
+        <div id="speedResult" class="result-box"></div>
     </div>
     <div class="num-pad">
         <button onclick="appendNumber('1')">1</button>
@@ -127,4 +193,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+
+
 
